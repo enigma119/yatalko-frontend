@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yatalko Frontend
+
+Frontend Next.js 14 pour **Yatalko** - La plateforme d'entraide academique pour les etudiants universitaires au Senegal.
+
+## Stack Technique
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **State Management**: Zustand (global) + React Query (server state)
+- **Forms**: React Hook Form + Zod
+- **HTTP Client**: Axios
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm ou yarn
+
+### Installation
+
+```bash
+# Cloner le repo
+git clone https://github.com/your-username/yatalko-frontend.git
+cd yatalko-frontend
+
+# Installer les dependances
+npm install
+
+# Copier le fichier d'environnement
+cp .env.example .env.local
+
+# Configurer l'URL de l'API backend
+# Editer .env.local et modifier NEXT_PUBLIC_API_URL
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000) dans le navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Structure du Projet
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                    # Routes Next.js (App Router)
+│   ├── (public)/          # Pages publiques
+│   ├── (auth)/            # Pages authentification
+│   └── (app)/             # Pages app (protegees)
+├── components/
+│   ├── ui/                # Composants base (Button, Input, Card)
+│   ├── features/          # Composants metier
+│   └── layouts/           # Layouts (Header, Footer, Sidebar)
+├── lib/
+│   ├── api.ts             # Client Axios + interceptors JWT
+│   ├── utils.ts           # Helpers
+│   └── constants.ts       # Constantes (routes, endpoints)
+├── hooks/                 # Custom React hooks
+├── stores/                # Zustand stores
+└── types/                 # TypeScript types
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Couleurs Yatalko:
+- **Primary** (Vert): #10B981 - Academique, croissance
+- **Accent** (Jaune): #F59E0B - Soleil africain
+- **Gray**: Echelle neutre pour textes et backgrounds
 
-## Deploy on Vercel
+## Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `docs/YATALKO-CONTEXTE.md` - Vision et contexte du projet
+- `docs/FRONTEND-CONTEXTE.md` - Patterns et conventions frontend
+- `docs/IDENTITE-VISUELLE-YATALKO.md` - Design system
+- `docs/PLAN-FRONTEND-YATALKO.md` - Plan de developpement
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
