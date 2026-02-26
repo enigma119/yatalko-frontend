@@ -12,25 +12,25 @@ import {
 const features = [
   {
     icon: BookOpen,
-    title: "Bibliotheque complete",
+    title: "Bibliothèque complète",
     description:
-      "Accede a des centaines d'anciens sujets d'examen, cours et exercices corriges, organises par matiere.",
+      "Accede à des centaines d'anciens sujets d'examen, cours et exercices corrigés, organisés par matière.",
     color: "text-primary-500",
     bgColor: "bg-primary-100",
   },
   {
     icon: MessageSquare,
-    title: "Discussions par matiere",
+    title: "Discussions par matière",
     description:
-      "Echange avec tes camarades dans des espaces dedies a chaque matiere. Fini le chaos des groupes WhatsApp !",
+      "Échange avec tes camarades dans des espaces dédiés à chaque matière. Fini le chaos des groupes WhatsApp !",
     color: "text-blue-500",
     bgColor: "bg-blue-100",
   },
   {
     icon: HelpCircle,
-    title: "Questions / Reponses",
+    title: "Questions / Réponses",
     description:
-      "Pose tes questions et obtiens des reponses de qualite. Les meilleures reponses sont mises en avant.",
+      "Pose tes questions et obtiens des réponses de qualité. Les meilleures réponses sont mises en avant.",
     color: "text-accent-500",
     bgColor: "bg-accent-100",
   },
@@ -44,9 +44,9 @@ const features = [
   },
   {
     icon: CheckCircle,
-    title: "Documents verifies",
+    title: "Documents vérifiés",
     description:
-      "Les ambassadeurs verifient la qualite des documents partages. Tu peux faire confiance aux ressources.",
+      "Les ambassadeurs vérifient la qualité des documents partagés. Tu peux faire confiance aux ressources.",
     color: "text-green-500",
     bgColor: "bg-green-100",
   },
@@ -54,7 +54,7 @@ const features = [
     icon: Smartphone,
     title: "Mobile-first",
     description:
-      "Accede a Yatalko depuis ton telephone, meme avec une connexion 3G. Optimise pour l'Afrique.",
+      "Accède à Yatalko depuis ton téléphone, même avec une connexion 3G. Optimise pour l'Afrique.",
     color: "text-rose-500",
     bgColor: "bg-rose-100",
   },
@@ -67,11 +67,11 @@ export default function FeaturesSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Tout ce dont tu as besoin pour reussir
+            Tout ce dont tu as besoin pour réussir
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Yatalko reunit tous les outils essentiels pour faciliter ton
-            parcours academique et t&apos;aider a exceller dans tes etudes.
+            parcours académique et t&apos;aider à exceller dans tes études.
           </p>
         </div>
 

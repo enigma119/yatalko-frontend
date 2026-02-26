@@ -8,28 +8,28 @@ const steps = [
     icon: UserPlus,
     title: "Inscris-toi",
     description:
-      "Cree ton compte gratuit en 30 secondes avec ton email. Aucune carte bancaire requise.",
+      "Crée ton compte gratuit en 30 secondes avec ton email. Aucune carte bancaire requise.",
   },
   {
     number: 2,
     icon: BookMarked,
-    title: "Rejoins tes matieres",
+    title: "Rejoins tes matières",
     description:
-      "Selectionne ta filiere et ton niveau, puis rejoins les matieres qui t'interessent.",
+      "Selectionne ta filière et ton niveau, puis rejoins les matières qui t'intéressent.",
   },
   {
     number: 3,
     icon: Share2,
     title: "Participe",
     description:
-      "Pose des questions, reponds aux autres, partage tes documents. Chaque action compte !",
+      "Pose des questions, réponds aux autres, partage tes documents. Chaque action compte !",
   },
   {
     number: 4,
     icon: Award,
     title: "Gagne des badges",
     description:
-      "Accumule des points, debloque des badges et monte dans le classement de ton universite.",
+      "Accumule des points, débloque des badges et monte dans le classement de ton université.",
   },
 ];
 
@@ -40,11 +40,11 @@ export default function HowItWorksSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comment ca marche ?
+            Comment ça marche ?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Rejoindre Yatalko est simple et rapide. En quelques minutes, tu fais
-            partie de la communaute.
+            partie de la communauté.
           </p>
         </div>
 

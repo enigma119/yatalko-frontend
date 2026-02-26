@@ -5,7 +5,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Yatalko m'a sauve la vie pendant les revisions ! J'ai trouve tous les anciens sujets d'algorithmique en 5 minutes au lieu de chercher pendant des heures sur WhatsApp.",
+      "Yatalko m'a sauve la vie pendant les révisions ! J'ai trouve tous les anciens sujets d'algorithmique en 5 minutes au lieu de chercher pendant des heures sur WhatsApp.",
     author: "Fatou Sarr",
     role: "L3 Informatique",
     avatar: "FS",
@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     quote:
-      "Enfin une plateforme ou je peux poser mes questions sans me faire ignorer. Les reponses sont rapides et de qualite. Et en plus, je gagne des points !",
+      "Enfin une plateforme ou je peux poser mes questions sans me faire ignorer. Les réponses sont rapides et de qualité. Et en plus, je gagne des points !",
     author: "Mamadou Diallo",
     role: "L2 Informatique",
     avatar: "MD",
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "En tant qu'ambassadeur, je suis fier de pouvoir aider les etudiants de ma filiere. Yatalko a vraiment change la facon dont on partage les ressources.",
+      "En tant qu'ambassadeur, je suis fier de pouvoir aider les étudiants de ma filière. Yatalko a vraiment change la façon dont on partage les ressources.",
     author: "Aminata Ndiaye",
     role: "M1 Informatique - Ambassadeur",
     avatar: "AN",
@@ -36,11 +36,11 @@ export default function TestimonialsSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Ce que disent les etudiants
+            Ce que disent les étudiants
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Des centaines d&apos;etudiants utilisent deja Yatalko pour reussir
-            leurs etudes. Decouvre leurs temoignages.
+            Des centaines d&apos;étudiants utilisent déjà Yatalko pour réussir
+            leurs études. Découvre leurs témoignages.
           </p>
         </div>
 

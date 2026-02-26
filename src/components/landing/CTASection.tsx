@@ -46,7 +46,7 @@ export default function CTASection() {
             <Button
               size="lg"
               variant="secondary"
-              className="border-white text-white hover:bg-white/10 w-full sm:w-auto"
+              className="border-white text-white hover:bg-white/10 bg-primary-600 w-full sm:w-auto"
             >
               J&apos;ai deja un compte
             </Button>

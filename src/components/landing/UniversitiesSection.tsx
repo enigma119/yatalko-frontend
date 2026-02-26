@@ -40,11 +40,11 @@ export default function UniversitiesSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Universites partenaires
+            Universités partenaires
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Yatalko grandit avec les universites senegalaises. Rejoins la
-            communaute de ton campus !
+            Yatalko grandit avec les universités sénégalaises. Rejoins la
+            communauté de ton campus !
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function UniversitiesSection() {
               {/* Coming Soon Badge */}
               {!uni.active && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-400 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  Bientot
+                  Bientôt
                 </div>
               )}
 
@@ -90,7 +90,7 @@ export default function UniversitiesSection() {
                 {uni.fullName}
               </p>
               <p className="text-xs text-gray-500 text-center">
-                {uni.city} - {uni.students} etudiants
+                {uni.city} - {uni.students} étudiants
               </p>
             </div>
           ))}
@@ -99,12 +99,12 @@ export default function UniversitiesSection() {
         {/* CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-600">
-            Ton universite n&apos;est pas encore sur Yatalko ?{" "}
+            Ton université n&apos;est pas encore sur Yatalko ?{" "}
             <a
               href="mailto:contact@yatalko.com"
               className="text-primary-600 font-semibold hover:underline"
             >
-              Contacte-nous
+              Contactez-nous
             </a>
           </p>
         </div>

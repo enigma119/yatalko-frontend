@@ -15,7 +15,7 @@ const subjects = [
     members: 234,
   },
   {
-    name: "Bases de Donnees",
+    name: "Bases de Données",
     code: "INFO203",
     level: "L2",
     semester: "S3",
@@ -24,7 +24,7 @@ const subjects = [
     members: 189,
   },
   {
-    name: "Programmation OO",
+    name: "Programmation Orientée Objet",
     code: "INFO202",
     level: "L2",
     semester: "S3",
@@ -33,7 +33,7 @@ const subjects = [
     members: 256,
   },
   {
-    name: "Reseaux",
+    name: "Réseaux",
     code: "INFO204",
     level: "L2",
     semester: "S4",
@@ -42,7 +42,7 @@ const subjects = [
     members: 167,
   },
   {
-    name: "Systemes d'Exploitation",
+    name: "Systèmes d'Exploitation",
     code: "INFO205",
     level: "L2",
     semester: "S4",
@@ -51,7 +51,7 @@ const subjects = [
     members: 145,
   },
   {
-    name: "Developpement Web",
+    name: "Développement Web",
     code: "INFO206",
     level: "L2",
     semester: "S4",
@@ -69,15 +69,15 @@ export default function PopularSubjectsSection() {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
-              Matieres populaires
+              Matières populaires
             </h2>
             <p className="text-gray-600">
-              Decouvre les matieres les plus actives sur Yatalko
+              Découvre les matières les plus actives sur Yatalko
             </p>
           </div>
           <Link href="/subjects">
             <Button variant="ghost" className="group">
-              Voir toutes les matieres
+              Voir toutes les matières
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
