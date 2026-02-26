@@ -33,7 +33,7 @@ function matchesRoute(path: string, routes: string[]): boolean {
   });
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Get access token from cookies
