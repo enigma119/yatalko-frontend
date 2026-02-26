@@ -1,6 +1,7 @@
 "use client";
 
 import { ProtectedRoute } from "@/components/auth";
+import { AppHeader } from "@/components/app";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -14,7 +15,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
   return (
     <ProtectedRoute requireVerified={false}>
       <div className="min-h-screen bg-gray-50">
-        {/* TODO: Add app header/navigation in Phase 3 */}
+        <AppHeader />
         <main>{children}</main>
       </div>
     </ProtectedRoute>
