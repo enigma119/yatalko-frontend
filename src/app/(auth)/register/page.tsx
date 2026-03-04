@@ -95,9 +95,9 @@ export default function RegisterPage() {
       } catch {
         // If API fails, use mock data for development
         setUniversities([
-          { id: 1, name: "Université Cheikh Anta Diop (UCAD)", shortName: "UCAD", city: "Dakar" },
-          { id: 2, name: "Université Gaston Berger (UGB)", shortName: "UGB", city: "Saint-Louis" },
-          { id: 3, name: "Université de Thiès (UT)", shortName: "UT", city: "Thiès" },
+          { id: "mock-univ-1", code: "UCAD", name: "Université Cheikh Anta Diop (UCAD)", city: "Dakar" },
+          { id: "mock-univ-2", code: "UGB", name: "Université Gaston Berger (UGB)", city: "Saint-Louis" },
+          { id: "mock-univ-3", code: "UT", name: "Université de Thiès (UT)", city: "Thiès" },
         ]);
       } finally {
         setLoadingUniversities(false);
@@ -117,14 +117,14 @@ export default function RegisterPage() {
     async function fetchPrograms() {
       setLoadingPrograms(true);
       try {
-        const data = await getPrograms(Number(selectedUniversityId));
+        const data = await getPrograms(selectedUniversityId);
         setPrograms(data);
       } catch {
         // If API fails, use mock data for development
         setPrograms([
-          { id: 1, name: "Informatique", code: "INFO", universityId: Number(selectedUniversityId), levels: ["L1", "L2", "L3", "M1", "M2"] },
-          { id: 2, name: "Mathématiques", code: "MATH", universityId: Number(selectedUniversityId), levels: ["L1", "L2", "L3", "M1", "M2"] },
-          { id: 3, name: "Physique", code: "PHYS", universityId: Number(selectedUniversityId), levels: ["L1", "L2", "L3"] },
+          { id: "mock-program-1", name: "Informatique", code: "INFO", universityId: selectedUniversityId, levels: ["L1", "L2", "L3", "M1", "M2"] },
+          { id: "mock-program-2", name: "Mathématiques", code: "MATH", universityId: selectedUniversityId, levels: ["L1", "L2", "L3", "M1", "M2"] },
+          { id: "mock-program-3", name: "Physique", code: "PHYS", universityId: selectedUniversityId, levels: ["L1", "L2", "L3"] },
         ]);
       } finally {
         setLoadingPrograms(false);
@@ -142,8 +142,8 @@ export default function RegisterPage() {
         password: data.password,
         firstName: data.firstName,
         lastName: data.lastName,
-        universityId: Number(data.universityId),
-        programId: Number(data.programId),
+        universityId: data.universityId,
+        programId: data.programId,
         level: data.level,
       });
 

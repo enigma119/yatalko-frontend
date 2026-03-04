@@ -1,6 +1,6 @@
 // API Configuration
 export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080/api";
 export const APP_URL =
   process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
@@ -29,13 +29,13 @@ export const ROUTES = {
   // App (protected)
   DASHBOARD: "/dashboard",
   SUBJECTS: "/subjects",
-  SUBJECT_DETAIL: (id: number | string) => `/subjects/${id}`,
+  SUBJECT_DETAIL: (id: string) => `/subjects/${id}`,
   POSTS: "/posts",
-  POST_DETAIL: (id: number | string) => `/posts/${id}`,
+  POST_DETAIL: (id: string) => `/posts/${id}`,
   DOCUMENTS: "/documents",
-  DOCUMENT_DETAIL: (id: number | string) => `/documents/${id}`,
+  DOCUMENT_DETAIL: (id: string) => `/documents/${id}`,
   PROFILE: "/profile",
-  PROFILE_DETAIL: (id: number | string) => `/profile/${id}`,
+  PROFILE_DETAIL: (id: string) => `/profile/${id}`,
   PROFILE_EDIT: "/profile/edit",
   LEADERBOARD: "/leaderboard",
   NOTIFICATIONS: "/notifications",
@@ -56,46 +56,46 @@ export const API_ENDPOINTS = {
 
   // Users
   ME: "/users/me",
-  USER: (id: number | string) => `/users/${id}`,
+  USER: (id: string) => `/users/${id}`,
   USER_ACTIVITY: "/users/me/activity",
 
   // Universities & Programs
   UNIVERSITIES: "/universities",
-  PROGRAMS: (universityId: number | string) =>
+  PROGRAMS: (universityId: string) =>
     `/universities/${universityId}/programs`,
 
   // Subjects
   SUBJECTS: "/subjects",
-  SUBJECT: (id: number | string) => `/subjects/${id}`,
+  SUBJECT: (id: string) => `/subjects/${id}`,
   MY_SUBJECTS: "/subjects/my-subjects",
-  JOIN_SUBJECT: (id: number | string) => `/subjects/${id}/join`,
-  LEAVE_SUBJECT: (id: number | string) => `/subjects/${id}/leave`,
+  JOIN_SUBJECT: (id: string) => `/subjects/${id}/join`,
+  LEAVE_SUBJECT: (id: string) => `/subjects/${id}/leave`,
 
   // Posts
   POSTS: "/posts",
-  POST: (id: number | string) => `/posts/${id}`,
-  POST_UPVOTE: (id: number | string) => `/posts/${id}/upvote`,
-  POST_DOWNVOTE: (id: number | string) => `/posts/${id}/downvote`,
-  POST_PIN: (id: number | string) => `/posts/${id}/pin`,
+  POST: (id: string) => `/posts/${id}`,
+  POST_UPVOTE: (id: string) => `/posts/${id}/upvote`,
+  POST_DOWNVOTE: (id: string) => `/posts/${id}/downvote`,
+  POST_PIN: (id: string) => `/posts/${id}/pin`,
 
   // Replies
-  REPLIES: (postId: number | string) => `/posts/${postId}/replies`,
-  REPLY: (postId: number | string, replyId: number | string) =>
+  REPLIES: (postId: string) => `/posts/${postId}/replies`,
+  REPLY: (postId: string, replyId: string) =>
     `/posts/${postId}/replies/${replyId}`,
-  REPLY_ACCEPT: (replyId: number | string) => `/replies/${replyId}/accept`,
-  REPLY_UPVOTE: (replyId: number | string) => `/replies/${replyId}/upvote`,
+  REPLY_ACCEPT: (replyId: string) => `/replies/${replyId}/accept`,
+  REPLY_UPVOTE: (replyId: string) => `/replies/${replyId}/upvote`,
 
   // Documents
   DOCUMENTS: "/documents",
-  DOCUMENT: (id: number | string) => `/documents/${id}`,
+  DOCUMENT: (id: string) => `/documents/${id}`,
   DOCUMENT_UPLOAD: "/documents/upload",
-  DOCUMENT_DOWNLOAD: (id: number | string) => `/documents/${id}/download`,
-  DOCUMENT_VERIFY: (id: number | string) => `/documents/${id}/verify`,
-  DOCUMENT_UPVOTE: (id: number | string) => `/documents/${id}/upvote`,
+  DOCUMENT_DOWNLOAD: (id: string) => `/documents/${id}/download`,
+  DOCUMENT_VERIFY: (id: string) => `/documents/${id}/verify`,
+  DOCUMENT_UPVOTE: (id: string) => `/documents/${id}/upvote`,
 
   // Notifications
   NOTIFICATIONS: "/notifications",
-  NOTIFICATION_READ: (id: number | string) => `/notifications/${id}/read`,
+  NOTIFICATION_READ: (id: string) => `/notifications/${id}/read`,
   NOTIFICATIONS_READ_ALL: "/notifications/read-all",
   NOTIFICATIONS_UNREAD_COUNT: "/notifications/unread-count",
 

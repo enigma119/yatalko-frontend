@@ -11,8 +11,8 @@ export interface RegisterRequest {
   password: string;
   firstName: string;
   lastName: string;
-  universityId: number;
-  programId: number;
+  universityId: string;
+  programId: string;
   level: string;
 }
 
@@ -64,10 +64,10 @@ export interface PaginationParams {
 // Search & Filter Types
 export interface SearchParams {
   search?: string;
-  universityId?: number;
-  programId?: number;
+  universityId?: string;
+  programId?: string;
   level?: string;
-  subjectId?: number;
+  subjectId?: string;
   type?: string;
   category?: string;
   year?: number;
@@ -80,7 +80,7 @@ export interface CreatePostRequest {
   title: string;
   content: string;
   type: string;
-  subjectId: number;
+  subjectId: string;
   tags?: string[];
 }
 
@@ -102,7 +102,7 @@ export interface CreateDocumentRequest {
   title: string;
   description?: string;
   category: string;
-  subjectId: number;
+  subjectId: string;
   year?: number;
   semester?: string;
   professorName?: string;
