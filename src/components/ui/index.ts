@@ -23,3 +23,5 @@ export type {
   CardContentProps,
   CardFooterProps,
 } from "./Card";
+
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./Tabs";

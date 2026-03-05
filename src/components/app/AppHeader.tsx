@@ -6,18 +6,16 @@ import {
   Home,
   BookOpen,
   FileText,
-  Bell,
-  User,
-  LogOut,
   Menu,
   X,
   Trophy,
-  Settings,
 } from "lucide-react";
 import { useAuthStore } from "@/stores/authStore";
-import { useLogout } from "@/hooks";
 import { ROUTES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import GlobalSearch from "./GlobalSearch";
+import NotificationsDropdown from "./NotificationsDropdown";
+import ProfileDropdown from "./ProfileDropdown";
 
 const navigation = [
   { name: "Dashboard", href: ROUTES.DASHBOARD, icon: Home },
@@ -28,13 +26,7 @@ const navigation = [
 
 export default function AppHeader() {
   const { user } = useAuthStore();
-  const { logout, isLoggingOut } = useLogout();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
-
-  const userInitials = user
-    ? `${user.firstName.charAt(0)}${user.lastName.charAt(0)}`
-    : "?";
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -49,7 +41,7 @@ export default function AppHeader() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -62,6 +54,11 @@ export default function AppHeader() {
             ))}
           </nav>
 
+          {/* Global Search */}
+          <div className="hidden sm:block flex-1 max-w-md mx-4">
+            <GlobalSearch />
+          </div>
+
           {/* Right Side */}
           <div className="flex items-center gap-3">
             {/* Points Badge */}
@@ -71,87 +68,15 @@ export default function AppHeader() {
             </div>
 
             {/* Notifications */}
-            <Link
-              href={ROUTES.NOTIFICATIONS}
-              className="relative p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
-            >
-              <Bell className="w-5 h-5" />
-              {/* Notification badge - TODO: connect to real count */}
-              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-            </Link>
+            <NotificationsDropdown />
 
             {/* Profile Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setProfileMenuOpen(!profileMenuOpen)}
-                className="flex items-center gap-2 p-1 rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                <div className="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
-                  {userInitials}
-                </div>
-              </button>
-
-              {/* Dropdown Menu */}
-              {profileMenuOpen && (
-                <>
-                  <div
-                    className="fixed inset-0 z-10"
-                    onClick={() => setProfileMenuOpen(false)}
-                  />
-                  <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-20">
-                    {/* User Info */}
-                    <div className="px-4 py-3 border-b border-gray-100">
-                      <p className="font-semibold text-gray-900">
-                        {user?.firstName} {user?.lastName}
-                      </p>
-                      <p className="text-sm text-gray-500 truncate">
-                        {user?.email}
-                      </p>
-                    </div>
-
-                    {/* Menu Items */}
-                    <div className="py-1">
-                      <Link
-                        href={ROUTES.PROFILE}
-                        onClick={() => setProfileMenuOpen(false)}
-                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      >
-                        <User className="w-4 h-4" />
-                        Mon profil
-                      </Link>
-                      <Link
-                        href={ROUTES.SETTINGS}
-                        onClick={() => setProfileMenuOpen(false)}
-                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                      >
-                        <Settings className="w-4 h-4" />
-                        Paramètres
-                      </Link>
-                    </div>
-
-                    {/* Logout */}
-                    <div className="border-t border-gray-100 pt-1">
-                      <button
-                        onClick={() => {
-                          setProfileMenuOpen(false);
-                          logout();
-                        }}
-                        disabled={isLoggingOut}
-                        className="flex items-center gap-3 w-full px-4 py-2 text-sm text-red-600 hover:bg-red-50 disabled:opacity-50"
-                      >
-                        <LogOut className="w-4 h-4" />
-                        {isLoggingOut ? "Déconnexion..." : "Se déconnecter"}
-                      </button>
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
+            <ProfileDropdown />
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+              className="lg:hidden p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
             >
               {mobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -165,7 +90,7 @@ export default function AppHeader() {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "md:hidden border-t border-gray-100 overflow-hidden transition-all duration-300",
+            "lg:hidden border-t border-gray-100 overflow-hidden transition-all duration-300",
             mobileMenuOpen ? "max-h-64 py-4" : "max-h-0"
           )}
         >

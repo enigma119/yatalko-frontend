@@ -133,3 +133,27 @@ export interface VoteRequest {
 export interface UnreadCountResponse {
   count: number;
 }
+
+// Activity Types
+export interface UserActivity {
+  id: string;
+  type: "POST_CREATED" | "REPLY_CREATED" | "DOCUMENT_UPLOADED" | "BADGE_EARNED" | "POINTS_EARNED";
+  title: string;
+  description?: string;
+  points?: number;
+  resourceId?: string;
+  resourceType?: "POST" | "REPLY" | "DOCUMENT" | "BADGE";
+  createdAt: string;
+}
+
+// Dashboard Stats Types
+export interface UserStats {
+  totalPoints: number;
+  totalBadges: number;
+  totalPosts: number;
+  totalReplies: number;
+  totalDocuments: number;
+  acceptedReplies: number;
+  weeklyPoints: number;
+  rank?: number;
+}

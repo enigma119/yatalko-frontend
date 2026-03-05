@@ -1,6 +1,7 @@
 "use client";
 
 import { AuthProvider } from "./AuthProvider";
+import { QueryProvider } from "./QueryProvider";
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -8,8 +9,12 @@ interface ProvidersProps {
 
 /**
  * Root providers wrapper
- * Add all client-side providers here (Auth, React Query, etc.)
+ * Includes: React Query, Auth
  */
 export function Providers({ children }: ProvidersProps) {
-  return <AuthProvider>{children}</AuthProvider>;
+  return (
+    <QueryProvider>
+      <AuthProvider>{children}</AuthProvider>
+    </QueryProvider>
+  );
 }
