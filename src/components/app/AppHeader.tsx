@@ -6,7 +6,6 @@ import {
   Home,
   BookOpen,
   FileText,
-  Bell,
   User,
   LogOut,
   Menu,
@@ -19,6 +18,7 @@ import { useLogout } from "@/hooks";
 import { ROUTES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import GlobalSearch from "./GlobalSearch";
+import NotificationsDropdown from "./NotificationsDropdown";
 
 const navigation = [
   { name: "Dashboard", href: ROUTES.DASHBOARD, icon: Home },
@@ -77,14 +77,7 @@ export default function AppHeader() {
             </div>
 
             {/* Notifications */}
-            <Link
-              href={ROUTES.NOTIFICATIONS}
-              className="relative p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
-            >
-              <Bell className="w-5 h-5" />
-              {/* Notification badge - TODO: connect to real count */}
-              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-            </Link>
+            <NotificationsDropdown />
 
             {/* Profile Dropdown */}
             <div className="relative">
