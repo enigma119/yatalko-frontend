@@ -36,9 +36,9 @@ export async function searchSubjects(query: string, limit: number = 10): Promise
 }
 
 /**
- * Search posts only
+ * Quick search posts (for autocomplete)
  */
-export async function searchPosts(query: string, limit: number = 10): Promise<Post[]> {
+export async function quickSearchPosts(query: string, limit: number = 10): Promise<Post[]> {
   const response = await api.get<Post[]>("/search/posts", {
     params: { q: query, limit },
   });

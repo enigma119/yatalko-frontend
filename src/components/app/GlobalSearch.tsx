@@ -93,8 +93,8 @@ export default function GlobalSearch() {
           onChange={(e) => setQuery(e.target.value)}
           onFocus={() => setIsOpen(true)}
           className={cn(
-            "w-full sm:w-64 lg:w-80 pl-9 pr-8 py-2 text-sm",
-            "bg-gray-100 border border-transparent rounded-lg",
+            "w-full sm:w-64 lg:w-95 pl-9 pr-8 py-2 text-sm",
+            "bg-gray-100 border border-transparent rounded-3xl",
             "focus:bg-white focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20",
             "placeholder:text-gray-500 transition-all"
           )}

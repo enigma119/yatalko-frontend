@@ -89,11 +89,6 @@ export default function SubjectDetailPage({ params }: SubjectDetailPageProps) {
     leaveMutation.mutate(id);
   };
 
-  const handleCreatePost = () => {
-    // TODO: Ouvrir modal création post (Phase 4)
-    console.log("Create post for subject:", id);
-  };
-
   const handleUploadDocument = () => {
     // TODO: Ouvrir modal upload document (Phase 5)
     console.log("Upload document for subject:", id);
@@ -153,10 +148,7 @@ export default function SubjectDetailPage({ params }: SubjectDetailPageProps) {
         <TabsContent value="discussions" className="mt-6">
           <SubjectDiscussions
             subjectId={id}
-            posts={[]} // TODO: Fetch posts (Phase 4)
-            isLoading={false}
             canCreatePost={subject.isJoined}
-            onCreatePost={handleCreatePost}
           />
         </TabsContent>
 

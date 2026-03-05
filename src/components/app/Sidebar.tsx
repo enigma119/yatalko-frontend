@@ -11,6 +11,7 @@ import {
   User,
   Settings,
   HelpCircle,
+  MessageSquare,
 } from "lucide-react";
 import { useAuthStore } from "@/stores/authStore";
 import { ROUTES } from "@/lib/constants";
@@ -18,6 +19,7 @@ import { cn } from "@/lib/utils";
 
 const mainNavigation = [
   { name: "Dashboard", href: ROUTES.DASHBOARD, icon: Home },
+  { name: "Discussions", href: ROUTES.POSTS, icon: MessageSquare },
   { name: "Matières", href: ROUTES.SUBJECTS, icon: BookOpen },
   { name: "Documents", href: ROUTES.DOCUMENTS, icon: FileText },
   { name: "Classement", href: ROUTES.LEADERBOARD, icon: Trophy },

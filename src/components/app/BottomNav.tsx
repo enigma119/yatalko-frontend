@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen, FileText, Trophy, User } from "lucide-react";
+import { Home, BookOpen, FileText, Trophy, User, MessageSquare } from "lucide-react";
 import { ROUTES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Accueil", href: ROUTES.DASHBOARD, icon: Home },
+  { name: "Discussions", href: ROUTES.POSTS, icon: MessageSquare },
   { name: "Matières", href: ROUTES.SUBJECTS, icon: BookOpen },
   { name: "Documents", href: ROUTES.DOCUMENTS, icon: FileText },
-  { name: "Classement", href: ROUTES.LEADERBOARD, icon: Trophy },
   { name: "Profil", href: ROUTES.PROFILE, icon: User },
 ];
 

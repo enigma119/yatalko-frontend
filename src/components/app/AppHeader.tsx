@@ -9,6 +9,7 @@ import {
   Menu,
   X,
   Trophy,
+  MessageSquare,
 } from "lucide-react";
 import { useAuthStore } from "@/stores/authStore";
 import { ROUTES } from "@/lib/constants";
@@ -19,6 +20,7 @@ import ProfileDropdown from "./ProfileDropdown";
 
 const navigation = [
   { name: "Dashboard", href: ROUTES.DASHBOARD, icon: Home },
+  { name: "Discussions", href: ROUTES.POSTS, icon: MessageSquare },
   { name: "Matières", href: ROUTES.SUBJECTS, icon: BookOpen },
   { name: "Documents", href: ROUTES.DOCUMENTS, icon: FileText },
   { name: "Classement", href: ROUTES.LEADERBOARD, icon: Trophy },
@@ -30,7 +32,7 @@ export default function AppHeader() {
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link
@@ -41,7 +43,7 @@ export default function AppHeader() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          {/* <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -52,7 +54,7 @@ export default function AppHeader() {
                 {item.name}
               </Link>
             ))}
-          </nav>
+          </nav> */}
 
           {/* Global Search */}
           <div className="hidden sm:block flex-1 max-w-md mx-4">
