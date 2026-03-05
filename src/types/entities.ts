@@ -1,6 +1,6 @@
 // User Types
 export interface User {
-  id: number;
+  id: string;
   email: string;
   firstName: string;
   lastName: string;
@@ -9,9 +9,9 @@ export interface User {
   badges: Badge[];
   avatarUrl?: string;
   bio?: string;
-  universityId: number;
+  universityId: string;
   universityName?: string;
-  programId: number;
+  programId: string;
   programName?: string;
   level: AcademicLevel;
   isVerified: boolean;
@@ -25,7 +25,7 @@ export type AcademicLevel = "L1" | "L2" | "L3" | "M1" | "M2";
 
 // Badge Types
 export interface Badge {
-  id: number;
+  id: string;
   code: string;
   name: string;
   description: string;
@@ -35,29 +35,29 @@ export interface Badge {
 
 // University & Program Types
 export interface University {
-  id: number;
+  id: string;
+  code: string;
   name: string;
-  shortName: string;
   city: string;
   logoUrl?: string;
 }
 
 export interface Program {
-  id: number;
+  id: string;
   name: string;
   code: string;
-  universityId: number;
+  universityId: string;
   levels: AcademicLevel[];
 }
 
 // Subject Types
 export interface Subject {
-  id: number;
+  id: string;
   name: string;
   code: string;
   description?: string;
   credits: number;
-  programId: number;
+  programId: string;
   programName?: string;
   level: AcademicLevel;
   semester: Semester;
@@ -71,13 +71,13 @@ export type Semester = "S1" | "S2" | "S3" | "S4" | "S5" | "S6";
 
 // Post Types
 export interface Post {
-  id: number;
+  id: string;
   title: string;
   content: string;
   type: PostType;
-  subjectId: number;
+  subjectId: string;
   subjectName?: string;
-  authorId: number;
+  authorId: string;
   author: UserSummary;
   tags: string[];
   upvotesCount: number;
@@ -86,7 +86,7 @@ export interface Post {
   viewsCount: number;
   isPinned: boolean;
   isResolved: boolean;
-  acceptedReplyId?: number;
+  acceptedReplyId?: string;
   userVote?: VoteType;
   createdAt: string;
   updatedAt: string;
@@ -97,7 +97,7 @@ export type PostType = "QUESTION" | "DISCUSSION" | "ANNOUNCEMENT";
 export type VoteType = "UPVOTE" | "DOWNVOTE" | null;
 
 export interface UserSummary {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   avatarUrl?: string;
@@ -107,10 +107,10 @@ export interface UserSummary {
 
 // Reply Types
 export interface Reply {
-  id: number;
+  id: string;
   content: string;
-  postId: number;
-  authorId: number;
+  postId: string;
+  authorId: string;
   author: UserSummary;
   upvotesCount: number;
   downvotesCount: number;
@@ -122,7 +122,7 @@ export interface Reply {
 
 // Document Types
 export interface Document {
-  id: number;
+  id: string;
   title: string;
   description?: string;
   category: DocumentCategory;
@@ -130,15 +130,15 @@ export interface Document {
   fileType: string;
   fileSize: number;
   thumbnailUrl?: string;
-  subjectId: number;
+  subjectId: string;
   subjectName?: string;
-  uploaderId: number;
+  uploaderId: string;
   uploader: UserSummary;
   year?: number;
   semester?: Semester;
   professorName?: string;
   isVerified: boolean;
-  verifiedById?: number;
+  verifiedById?: string;
   verifiedAt?: string;
   upvotesCount: number;
   downloadsCount: number;
@@ -156,7 +156,7 @@ export type DocumentCategory =
 
 // Notification Types
 export interface Notification {
-  id: number;
+  id: string;
   type: NotificationType;
   title: string;
   message: string;
@@ -184,7 +184,7 @@ export interface LeaderboardEntry {
 }
 
 export interface PointsHistory {
-  id: number;
+  id: string;
   points: number;
   reason: string;
   createdAt: string;
