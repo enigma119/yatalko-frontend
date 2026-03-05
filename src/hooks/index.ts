@@ -3,3 +3,4 @@ export { useSubjects, useMySubjects, useSubject, useJoinSubject, useLeaveSubject
 export { useUserActivity, useUserStats } from "./useDashboard";
 export { useUniversities, usePrograms } from "./useUniversities";
 export { useDebounce } from "./useDebounce";
+export { useGlobalSearch } from "./useSearch";

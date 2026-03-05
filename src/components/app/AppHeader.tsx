@@ -18,6 +18,7 @@ import { useAuthStore } from "@/stores/authStore";
 import { useLogout } from "@/hooks";
 import { ROUTES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import GlobalSearch from "./GlobalSearch";
 
 const navigation = [
   { name: "Dashboard", href: ROUTES.DASHBOARD, icon: Home },
@@ -49,7 +50,7 @@ export default function AppHeader() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -61,6 +62,11 @@ export default function AppHeader() {
               </Link>
             ))}
           </nav>
+
+          {/* Global Search */}
+          <div className="hidden sm:block flex-1 max-w-md mx-4">
+            <GlobalSearch />
+          </div>
 
           {/* Right Side */}
           <div className="flex items-center gap-3">
@@ -151,7 +157,7 @@ export default function AppHeader() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+              className="lg:hidden p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
             >
               {mobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -165,7 +171,7 @@ export default function AppHeader() {
         {/* Mobile Navigation */}
         <div
           className={cn(
-            "md:hidden border-t border-gray-100 overflow-hidden transition-all duration-300",
+            "lg:hidden border-t border-gray-100 overflow-hidden transition-all duration-300",
             mobileMenuOpen ? "max-h-64 py-4" : "max-h-0"
           )}
         >
